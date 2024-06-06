@@ -122,7 +122,7 @@ const ProjectsSection = () => {
         ))}
       </ul>
     </section>
-  );
+  )
 };
 
 export default ProjectsSection;
