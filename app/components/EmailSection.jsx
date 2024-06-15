@@ -1,43 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef,useState } from "react";
 import GithubIcon from "../../public/github-icon.svg";
 import LinkedinIcon from "../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
-import {motion} from "framer-motion"
+import {motion} from "framer-motion";
+import emailjs from '@emailjs/browser';
+import { Col, Container, Row } from 'react-bootstrap'
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-
+  const form = useRef();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
 
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
+    emailjs
+    .sendForm('service_263uo2o', 'template_09719ts', form.current, {
+      publicKey: 'mPSFhBKSQNYxDamR9',
+    })
+    .then(
+      () => {
+        e.target.reset();
+        console.log('SUCCESS!');
+        alert('Email sent!')
       },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
-    }
+      (error) => {
+        console.log('FAILED...', error.text);
+      },
+    );
   };
 
   return (
@@ -73,59 +63,44 @@ const EmailSection = () => {
             Email sent successfully!
           </p>
         ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Your email
-              </label>
-              <input
-                name="email"
-                type="email"
-                id="email"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="jacob@google.com"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Subject
-              </label>
-              <input
-                name="subject"
-                type="text"
-                id="subject"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
-              />
-            </div>
-            <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Message
-              </label>
-              <textarea
-                name="message"
-                id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-            >
-              Send Message
-            </button>
+          <form ref={form} className="flex flex-col" onSubmit={handleSubmit}>
+            <Row>
+                  <Col lg='6' className='form-group'>
+                    <input
+                      className='form-control bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 mb-4 mt-2'
+                      id="name"
+                      name="your_name"
+                      placeholder='Name'
+                      type="text"
+                      autoComplete='given-name'
+                    />
+                  </Col>
+                  <Col lg='6' className='form-group'>
+                    <input
+                      className='form-control rounded-0 bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5 mb-4'
+                      id="email"
+                      name="your_email"
+                      placeholder='Email'
+                      type="email"
+                      autoComplete='on'
+                    />
+                  </Col>
+                  <Col>
+                        <textarea className='form-control rounded-0 
+bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm  block w-full p-2.5 rounded-lg mb-4' 
+                                id="message"
+                                name="message"
+                                placeholder='Message'
+                                rows='5'>
+                      </textarea>
+                    
+                  </Col>
+                  <Col lg='12' className='form-group'>
+                    <button className='btn ac_btn bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5' type="submit">
+                      Send
+                    </button>
+                  </Col>
+                </Row>
           </form>
         )}
       </div>

@@ -1,8 +1,8 @@
 "use client";
-import React from 'react'
+import React from 'react';
 import Image from 'next/image';
 import './HeroSection.css';
-import {TypeAnimation} from 'react-type-animation'
+import {TypeAnimation} from 'react-type-animation';
 
 /**bg-clip + gradient makes the first line of text colorful 
  * had to arrange directory for the file
