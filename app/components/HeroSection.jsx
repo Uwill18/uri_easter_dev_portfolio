@@ -3,48 +3,19 @@ import React from 'react';
 import Image from 'next/image';
 import './HeroSection.css';
 import {TypeAnimation} from 'react-type-animation';
-//import resume from '../../public/resume/EasterResume.pdf'
 
 
 
 
 
 /**bg-clip + gradient makes the first line of text colorful 
- * had to arrange directory for the file
 */
 
-/**ChatGPT used DOM manipulation to create a hyperlink to the resume in
- * my current directory
+/**how to download pdf for resume
+ * https://www.youtube.com/watch?v=JZU2b8U9d54
+ * https://stackoverflow.com/questions/56348979/reactjs-downloading-a-pdf-file-failed-no-file
  */
 const HeroSection = () => {
-
-// const resumeUrl ="http://localhost:3000/public/resume/EasterResume.pdf"
-// const downloadResume = (url)=>{
-//   fetch(url)
-//   .then((response)=> response.blob())
-//   .then((blob)=>{
-//     const blobUrl = window.URL.createObjectURL(new Blob([blob]));
-//     const fileName = url.split("/").pop();
-//     const aTag = document.createElement("a");
-//     aTag.href = url;
-//     aTag.setAttribute("download", fileName);
-//     document.body.appendChild(aTag);
-//     aTag.click();
-//     aTag.remove();
-//   })
-// }
-
-
-    // const downloadResume = () => {
-    //   const resumePath = resume; // Update with the correct path
-    //   const link = document.createElement('a');
-    //   link.href = resumePath;
-    //   link.download = 'Uri_Easter_Resume.pdf';
-    //   document.body.appendChild(link);
-    //   link.click();
-    //   console.log("I was clicked")
-    //   document.body.removeChild(link);
-    // };
 
   return (
     <section>
@@ -83,7 +54,10 @@ const HeroSection = () => {
             <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>
               <a 
               download ="EasterResume.pdf"
-              href="EasterResume.pdf"> 
+              href="/resume/EasterResume.pdf"
+              target="_blank"
+              alt="my cv"
+              rel="noopener noreferrer"> 
                 Download CV
               </a>
             </span>

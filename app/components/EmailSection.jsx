@@ -6,7 +6,9 @@ import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import emailjs from '@emailjs/browser';
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap';
+import { TbMessageChatbot } from "react-icons/tb";
+import ChatBot from "../../public/chatbot2.png";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -55,6 +57,15 @@ const EmailSection = () => {
           <Link href="linkedin.com">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
+          <Link href="linkedin.com">
+            <Image src={ChatBot} 
+            alt="Virtual Assistant" 
+            height={48} 
+            width={48}/>
+          </Link>
+        
+            {/* <TbMessageChatbot className="text-white" width={150} height={150}/> */}
+          
         </div>
       </div>
       <div>
