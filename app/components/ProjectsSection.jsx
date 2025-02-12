@@ -7,56 +7,56 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
-    // image: "/images/projects/1.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
+    title: "Gift of Faith Construction",
+    description: "Civil Engineering Website",
+    image: "/images/gof.png",
+    tag: ["All Projects", "Client Work"],
+    gitUrl: "https://gift-of-faith.netlify.app/",
     previewUrl: "/",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
-    // image: "/images/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
+    title: "Junior's Essentials",
+    description: "E-commerce Website",
+    image: "/images/juniors_essentials.png",
+    tag: ["All Projects", "Client Work"],
+    gitUrl: "https://juniorspb.netlify.app/",
     previewUrl: "/",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
+    title: "Brancher",
+    description: "Full-scale E-commerce application",
     // image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
+    tag: ["All Projects", "Client Work"],
+    gitUrl: "https://brancher.vercel.app/",
     previewUrl: "/",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    // image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
+    title: "MarketLink",
+    description: "Website for Consulting Real Estate",
+    image: "/images/",
+    tag: ["All Projects", "Personal Projects"],
+    gitUrl: "",
     previewUrl: "/",
   },
   {
     id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    // image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
+    title: "Best Bahn Mi E-commerce",
+    description: "Coming Soon",
+    image: "/images/best_bahn_mi.png",
+    tag: ["All Projects", "Personal Projects"],
+    gitUrl: "https://bestbahnmi.netlify.app/",
     previewUrl: "/",
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    // image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
+    title: "BlueJay Consulting Real Estate",
+    description: "Website for Consulting Real Estate",
+    image: "/images/brc.png",
+    tag: ["All Projects", "Personal Projects"],
+    gitUrl: "https://brc-demo-01.netlify.app/",
     previewUrl: "/",
   },
 ];
@@ -87,18 +87,18 @@ const ProjectsSection = () => {
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
+          name="All Projects"
+          isSelected={tag === "All Projects"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
+          name="Client Work"
+          isSelected={tag === "Client Work"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="Personal Projects"
+          isSelected={tag === "Personal Projects"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3  gap-8 md:gap-12  sm:grid-cols-1">
