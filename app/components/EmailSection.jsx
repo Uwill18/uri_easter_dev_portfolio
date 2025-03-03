@@ -6,7 +6,7 @@ import { emailValidation } from './emailValidation';
 import emailjs from '@emailjs/browser';
 import GithubIcon from "../../public/github-icon.svg";
 import LinkedinIcon from "../../public/linkedin-icon.svg";
-import ChatBot from "../../public/chatbot2.png";
+import ChatBot from "../components/Chatbot";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -73,9 +73,7 @@ const EmailSection = () => {
           <Link href="linkedin.com">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
-          <Link href="linkedin.com">
-            <Image src={ChatBot} alt="Virtual Assistant" height={48} width={48} />
-          </Link>
+          <ChatBot/>
         </div>
       </div>
       <div>
