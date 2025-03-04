@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Image from "next/image";
-import ChatBot from "../public/chatbot-icon.png"; // Update your chatbot image path
+import ChatBot from "../../public/chatbot2.png"; // Update to your image path
 
 const ChatBotComponent = () => {
   useEffect(() => {
@@ -24,7 +24,7 @@ const ChatBotComponent = () => {
   }, []);
 
   const openChatbot = () => {
-    window.voiceflow?.chat?.open(); // This opens the chatbot when the image is clicked
+    window.voiceflow?.chat?.open(); // Opens the chatbot on click
   };
 
   return (
