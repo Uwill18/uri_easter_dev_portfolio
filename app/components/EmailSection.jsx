@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import { Col, Row } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { emailValidation } from './emailValidation';
+import { emailValidation } from './EmailValidation';
 import emailjs from '@emailjs/browser';
 import GithubIcon from "../../public/github-icon.svg";
 import LinkedinIcon from "../../public/linkedin-icon.svg";
