@@ -1,8 +1,8 @@
 export const experiences = [
     {
-      year: "2023 - Present",
-      role: "Senior Full Stack Developer",
-      company: "Google Inc.",
+      year: "March 2024 - Present",
+      role: "Full Stack Developer",
+      company: "A7",
       description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
       technologies: ["Javascript", "React.js", "Next.js", "mongoDB"],
     },

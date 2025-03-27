@@ -46,7 +46,8 @@ const HeroSection = () => {
     />
           </h1>
         <p className='text-[#ADB7BE] text-lg mb-6 lg:text-xl'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quam doloremque sequi obcaecati hic dolor cumque facere, nemo fuga accusantium minus at quibusdam aliquid! Deleniti esse dolore eveniet vero quisquam!
+        Experienced full-stack software developer with expertise in front-end and back-end technologies. 
+        Proficient in HTML5, CSS3, JavaScript, React.js, Node.js, and Java.
         </p>
         <div>
           <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-black'>Hire Me</button>
