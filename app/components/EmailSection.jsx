@@ -64,7 +64,7 @@ const EmailSection = () => {
       <div className="flex flex-col-reverse">
         <h5 className="text-xl font-bold text-white my-2 py-12">Let&apos;s Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I&apos;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
+          I&apos;m currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I&apos;ll be sure to get back to you asap!
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="https://www.github.com">
